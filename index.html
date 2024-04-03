@@ -1,16 +1,21 @@
 <!doctype html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
         <title>We are the Champions</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
-            <h1>We are the Champions</h1>
-            <input type="text" id="input-field">
+            <img src="assets/freddie.png">
+            <h1 id="title-h1">We are the Champions</h1>
+            <input type="text" id="input-field" placeholder="Write your endorsement here">
+            <!-- <input type="text" id="from-field" placeholder="From">
+            <input type="text" id="to-field" placeholder="To"> -->
             <button id="publish-btn">Publish</button>
             <h1>Endorsements</h1>
-            <p></p>
+            <ul id="endorsements-el"> </ul>
         </div>
         <script src="index.js" type="module"></script>
     </body>
