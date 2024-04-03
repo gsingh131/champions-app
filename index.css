@@ -7,6 +7,43 @@ html, body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: #1B1924;
     
+}
+
+#title-h1{
+    color: #FFFFFF;
+}
+
+
+
+
+#input-field{
+    width: 317px;
+    height: 118px;
+    margin: 10px auto;
+    color: #8F8F8F;
+    background-color: #444059;
+    border: none;
+    border-radius: 8px;
+
+}
+
+
+
+ul li{
+    background-color: white;
+    margin: 10px auto;
+    list-style: none;
+    text-align: center;
+    max-width: 317px;
+    height: auto;
+
+}
+
+img{
+    width: 50px;
+    text-align: center;
+    margin: 0 auto;
 }
 
