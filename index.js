@@ -10,9 +10,12 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const endorsementsInDB = ref(database, "endorsements")
+//const fromInDB = ref(database, "from")
+//const toInDB = ref(database, "to")
 
 const inputField = document.getElementById("input-field")
 const publishBtn = document.getElementById("publish-btn")
+const endorsementsEl = document.getElementById("endorsements-el")
 
 //pushes whatever is in the input field to the database when you click publish 
 publishBtn.addEventListener("click", function(){
@@ -25,15 +28,46 @@ publishBtn.addEventListener("click", function(){
 
 onValue(endorsementsInDB, function(snapshot){
     if(snapshot.exists()){
-        let itemsArrat = Object.entries(snapshot.val())
+        let itemsArray = Object.entries(snapshot.val())
+        let reverseItemsArray = itemsArray.reverse()
         
+            clearEndorsementsEl()
+            
+            for(let i = 0; i < reverseItemsArray.length; i++){
+                let currentItem = reverseItemsArray[i]
+                let currentItemId = currentItem[0]
+                let currentItemValue = currentItem[1]
+                
+                appendItemToEndorsementsEl(currentItem)
+        }
+    }  else {
+        endorsementsEl.innerHTML = "No endorsments... yet"
     }
 })
-
-
 
 
 //clears input field 
 function clearInputField(){
     inputField.value = ""
+}
+//clears endorsements li items
+function clearEndorsementsEl(){
+    endorsementsEl.innerHTML = ""
+}
+
+function appendItemToEndorsementsEl(item) {
+    let itemID = item[0]
+    let itemValue = item[1]
+    
+    let newEl = document.createElement("li")
+    
+    newEl.textContent = itemValue
+    
+    newEl.addEventListener("dblclick", function() {
+        let exactLocationOfItemInDB = ref(database, `endorsements/${itemID}`)
+        
+        remove(exactLocationOfItemInDB)
+    })
+    
+    endorsementsEl.append(newEl)
 }
