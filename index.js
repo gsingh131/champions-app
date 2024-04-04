@@ -41,7 +41,7 @@ onValue(endorsementsInDB, function(snapshot){
                 appendItemToEndorsementsEl(currentItem)
         }
     }  else {
-        endorsementsEl.innerHTML = "No endorsments... yet"
+        endorsementsEl.innerHTML = "<span style='color: white;'>No endorsments... yet</span>"
     }
 })
 
