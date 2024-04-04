@@ -1,6 +1,8 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: #1B1924;
+    user-select: none;
 }
 
 .container{
@@ -8,14 +10,26 @@ html, body {
     flex-direction: column;
     text-align: center;
     background-color: #1B1924;
+    justify-content: center;
+    max-width: 390px;
+    margin: 30px auto;
     
 }
 
+img{
+    width: 90px;
+    height: 90px;
+    margin-top: 51px;
+}
+    
+
 #title-h1{
     color: #FFFFFF;
+    font-family: Josefin Sans, Times, serif;
+    font-weight: 700;
+    font-size: 25px;
+    
 }
-
-
 
 
 #input-field{
@@ -26,24 +40,49 @@ html, body {
     background-color: #444059;
     border: none;
     border-radius: 8px;
-
+    font-family: Inter, Times, sans-serif;
+    resize: none;
 }
 
-
-
-ul li{
-    background-color: white;
-    margin: 10px auto;
-    list-style: none;
-    text-align: center;
-    max-width: 317px;
-    height: auto;
-
-}
-
-img{
-    width: 50px;
-    text-align: center;
+#publish-btn{
     margin: 0 auto;
+    width: 317px;
+    height: 61px;
+    background-color: #28A9F1;
+    border: none;
+    border-radius: 8px;
+    font-family: Josefin Sans, Times, serif;
+    font-weight: 700;
+    font-size: 22px;
+    
 }
+
+h1{
+    font-family: Josefin Sans, Times, serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    
+}
+
+ul{
+    margin: 0;
+}
+
+li {
+  width: 280px;
+  list-style: none;
+  background: white;
+  color: #1B1924;
+  text-align: left;
+  padding: 20px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  word-break:keep-all;
+}
+
+
+
+
+
 
